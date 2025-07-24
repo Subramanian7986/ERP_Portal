@@ -1,0 +1,133 @@
+.admin-announcements-container {
+  max-width: 600px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(26, 78, 138, 0.09);
+  padding: 2.5rem 2rem 2rem 2rem;
+  font-family: inherit;
+}
+
+.admin-announcements-container h2 {
+  color: #174ea6;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.aa-form {
+  margin-bottom: 2rem;
+}
+.aa-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.1rem;
+}
+.aa-form-row label {
+  font-weight: 500;
+  color: #174ea6;
+}
+.aa-form-row input,
+.aa-form-row textarea,
+.aa-form-row select {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #c7d7ef;
+  font-size: 1rem;
+  background: #f7faff;
+  color: #174ea6;
+}
+.aa-create-btn {
+  background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.18rem 0.7rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33, 147, 176, 0.1);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+  margin-top: 0.5rem;
+  width: 100%;
+  min-width: 0;
+}
+.aa-create-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.aa-error {
+  color: #d32f2f;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.aa-success {
+  color: #388e3c;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.aa-loading {
+  color: #174ea6;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+}
+.aa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.aa-item {
+  background: #f7faff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(26, 78, 138, 0.07);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.1rem;
+}
+.aa-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.aa-title {
+  font-weight: 600;
+  color: #174ea6;
+  font-size: 1.08rem;
+}
+.aa-delete-btn {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 6px;
+  transition: background 0.2s;
+  min-width: 0;
+}
+.aa-delete-btn:hover {
+  background: #ffeaea;
+}
+.aa-message {
+  color: #1a4e8a;
+  font-size: 1.01rem;
+  margin-bottom: 0.4rem;
+}
+.aa-meta {
+  color: #7a8ca3;
+  font-size: 0.97rem;
+}
+@media (max-width: 600px) {
+  .admin-announcements-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .aa-item {
+    padding: 0.7rem 0.5rem;
+  }
+}

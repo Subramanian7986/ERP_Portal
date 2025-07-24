@@ -1,0 +1,89 @@
+.procurement-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.procurement-sidebar {
+  width: 240px;
+  background: #1a4e8a;
+  color: #fff;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-height: 100vh;
+}
+
+.procurement-sidebar-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.procurement-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.procurement-sidebar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px 0;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.procurement-sidebar-link:hover {
+  background: #285ea8;
+}
+
+.procurement-main {
+  flex: 1;
+  background: #f8fbff;
+  padding: 2.5rem 2.5rem;
+}
+
+.procurement-dashboard-title {
+  color: #1a4e8a;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.procurement-widgets {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.procurement-widget {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(26, 78, 138, 0.07);
+  padding: 24px;
+  min-width: 220px;
+  flex: 1;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.procurement-widget::-webkit-scrollbar {
+  width: 8px;
+}
+.procurement-widget::-webkit-scrollbar-thumb {
+  background: #c7d7ef;
+  border-radius: 4px;
+}
+
+.procurement-widget-title {
+  color: #1a4e8a;
+  font-size: 18px;
+}
+
+.procurement-widget-placeholder {
+  color: #7a8ca3;
+  margin-top: 8px;
+}

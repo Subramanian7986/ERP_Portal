@@ -1,0 +1,143 @@
+.role-permission-mgmt-container {
+  max-width: 540px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(26, 78, 138, 0.09);
+  padding: 2.5rem 2rem 2rem 2rem;
+  font-family: inherit;
+}
+
+.role-permission-mgmt-container h2 {
+  color: #174ea6;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.rpm-role-select {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rpm-role-select label {
+  font-weight: 500;
+  color: #174ea6;
+}
+
+.rpm-role-select select {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #c7d7ef;
+  font-size: 1rem;
+  background: #f7faff;
+  color: #174ea6;
+}
+
+.rpm-permissions-list {
+  margin-bottom: 1.5rem;
+}
+
+.rpm-permissions-list h3 {
+  color: #174ea6;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.rpm-permissions-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rpm-permissions-list li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.rpm-perm-name {
+  font-weight: 500;
+  color: #174ea6;
+  margin-left: 0.5rem;
+}
+
+.rpm-perm-desc {
+  color: #7a8ca3;
+  font-size: 0.97rem;
+  margin-left: 0.7rem;
+}
+
+.rpm-save-btn {
+  background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33, 147, 176, 0.1);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  outline: none;
+  margin-top: 1rem;
+  width: 100%;
+}
+.rpm-save-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.rpm-error {
+  color: #d32f2f;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.rpm-success {
+  color: #388e3c;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.rpm-loading {
+  color: #174ea6;
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+}
+
+.rpm-back-btn {
+  background: linear-gradient(90deg, #e3eafc 0%, #f8fbff 100%);
+  color: #174ea6;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 4px rgba(26, 78, 138, 0.07);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  outline: none;
+}
+.rpm-back-btn:hover {
+  background: linear-gradient(90deg, #dbeafe 0%, #e3eafc 100%);
+  color: #1a4e8a;
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .role-permission-mgmt-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .rpm-save-btn {
+    font-size: 1rem;
+    padding: 0.7rem 0.5rem;
+  }
+}
