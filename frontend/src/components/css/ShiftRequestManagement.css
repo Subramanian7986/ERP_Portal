@@ -1,0 +1,279 @@
+.shift-request-management-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shift-request-management-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.shift-request-management-header {
+  margin-bottom: 30px;
+}
+
+.shift-request-management-header h1 {
+  color: #333;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-filter {
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #174ea6;
+  box-shadow: 0 0 0 3px rgba(23, 78, 166, 0.1);
+}
+
+.filter-controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.filter-select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.refresh-btn {
+  background: #174ea6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: #0d3a7a;
+}
+
+.no-requests {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.no-requests p {
+  font-size: 18px;
+}
+
+.requests-table {
+  overflow-x: auto;
+}
+
+.requests-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.requests-table th {
+  background: #f8f9fa;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.requests-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.requests-table tr:hover {
+  background: #f8f9fa;
+}
+
+.employee-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.employee-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.employee-username {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.shift-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shift-name {
+  background: #174ea6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.shift-time {
+  color: #6c757d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.reason-cell {
+  max-width: 200px;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.status-badge {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-approve,
+.btn-reject {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 60px;
+}
+
+.btn-approve {
+  background: #388e3c;
+  color: white;
+}
+
+.btn-approve:hover {
+  background: #2e7d32;
+}
+
+.btn-reject {
+  background: #d32f2f;
+  color: white;
+}
+
+.btn-reject:hover {
+  background: #c62828;
+}
+
+.processed-by {
+  color: #6c757d;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .shift-request-management-container {
+    padding: 15px;
+  }
+
+  .shift-request-management-content {
+    padding: 20px;
+  }
+
+  .shift-request-management-header h1 {
+    font-size: 24px;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-filter {
+    min-width: auto;
+  }
+
+  .filter-controls {
+    justify-content: space-between;
+  }
+
+  .requests-table {
+    font-size: 12px;
+  }
+
+  .requests-table th,
+  .requests-table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .btn-approve,
+  .btn-reject {
+    font-size: 11px;
+    padding: 4px 8px;
+    min-width: 50px;
+  }
+}

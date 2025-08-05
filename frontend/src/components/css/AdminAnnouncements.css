@@ -1,0 +1,188 @@
+/* AdminAnnouncements.css */
+
+.admin-announcements-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-announcements-container h2,
+.admin-announcements-container h3 {
+  color: #174ea6;
+  margin-bottom: 20px;
+}
+
+.aa-error {
+  color: #d32f2f;
+  background: #fff0f0;
+  border: 1.5px solid #ff8a80;
+  border-radius: 7px;
+  padding: 10px 16px;
+  margin: 12px 0;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.07);
+}
+
+.aa-success {
+  background-color: #e6ffe6;
+  color: #006400;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #006400;
+}
+
+.aa-form {
+  margin-bottom: 30px;
+}
+
+.aa-form-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.aa-form-row label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+.aa-form-row input,
+.aa-form-row textarea,
+.aa-form-row select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+.aa-form-row input:focus,
+.aa-form-row textarea:focus,
+.aa-form-row select:focus {
+  border-color: #174ea6;
+  outline: none;
+  background-color: #fff;
+}
+
+.aa-create-btn {
+  background-color: #174ea6;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.aa-create-btn:hover {
+  background-color: #123c85;
+}
+
+.aa-create-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.aa-loading {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+}
+
+.aa-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aa-item {
+  background-color: #f7f9fc;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+}
+
+.aa-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.aa-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #174ea6;
+}
+
+.aa-create-btn {
+  background-color: #174ea6;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 220px; /* 👈 fixed width */
+  text-align: center;
+}
+
+.aa-create-btn:hover {
+  background-color: #123c85;
+}
+
+.aa-create-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.aa-delete-btn {
+  background: none;
+  border: none;
+  color: #d8000c;
+  font-size: 18px;
+  width: 40px; /* 👈 fixed width */
+  height: 40px; /* 👈 fixed height */
+  border-radius: 50%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.aa-delete-btn:hover {
+  background-color: #ffeaea;
+  color: #a30000;
+}
+
+.aa-delete-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.aa-message {
+  margin-bottom: 10px;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+.aa-meta {
+  font-size: 14px;
+  color: #666;
+}

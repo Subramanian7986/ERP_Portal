@@ -1,0 +1,421 @@
+/* --- Professional User Management Page Theme (Matching AdminDashboard) --- */
+
+:root {
+  --ump-primary: #174ea6;
+  --ump-primary-light: #3a8dde;
+  --ump-accent: #2193b0;
+  --ump-accent-light: #6dd5ed;
+  --ump-bg: #f4f8fc;
+  --ump-widget-bg: #fff;
+  --ump-border: #e3f0ff;
+  --ump-shadow: 0 4px 24px rgba(26, 78, 138, 0.1);
+  --ump-radius: 14px;
+  --ump-transition: 0.18s cubic-bezier(0.23, 1.01, 0.32, 1);
+  --ump-danger: #d32f2f;
+  --ump-success: #388e3c;
+  --ump-warning: #f9a825;
+}
+
+body,
+.ump-container {
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  background: var(--ump-bg);
+}
+
+.ump-container {
+  max-width: 98vw;
+  width: 100%;
+  margin: 24px auto;
+  background: var(--ump-widget-bg);
+  border-radius: var(--ump-radius);
+  box-shadow: var(--ump-shadow);
+  padding: 40px 32px 32px 32px;
+  position: relative;
+  min-height: 600px;
+}
+
+.ump-title {
+  color: var(--ump-primary);
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.ump-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ump-role-filter {
+  font-weight: 500;
+  color: var(--ump-primary);
+}
+.ump-role-select {
+  margin-left: 8px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #c7d7ef;
+  background: #f4f8fc;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+.ump-role-select:focus {
+  border: 1.5px solid var(--ump-primary-light);
+  outline: none;
+}
+.ump-search {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #c7d7ef;
+  min-width: 140px;
+  background: #f4f8fc;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+.ump-search:focus {
+  border: 1.5px solid var(--ump-primary-light);
+  outline: none;
+}
+
+.ump-table-container {
+  overflow-x: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  border: 1.5px solid var(--ump-border);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(26, 78, 138, 0.04);
+  width: 100%;
+}
+.ump-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ump-table th {
+  padding: 10px 10px;
+  text-align: left;
+  background: #eaf2fb;
+  color: var(--ump-primary);
+  font-weight: 700;
+  font-size: 13px;
+  border-bottom: 2px solid #dbeafe;
+  letter-spacing: 0.2px;
+}
+.ump-table td {
+  padding: 8px 10px;
+  background: #fff;
+}
+.ump-table tr {
+  border-bottom: 1px solid var(--ump-border);
+  transition: background var(--ump-transition);
+}
+.ump-table tr:hover {
+  background: #f4f8fc;
+}
+.ump-table th.ump-action-col,
+.ump-table td.ump-action-col {
+  width: 28px;
+  text-align: center;
+}
+
+.ump-action-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 0 5px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  min-width: 18px;
+  min-height: 18px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  margin-right: 4px;
+  box-shadow: 0 1px 2px rgba(26, 78, 138, 0.04);
+}
+.ump-action-btn:last-child {
+  margin-right: 0;
+}
+.ump-action-btn.deactivate {
+  background: #fffde7;
+  color: var(--ump-warning);
+  border: 1px solid #ffe082;
+}
+.ump-action-btn.deactivate:hover {
+  background: #ffe082;
+  color: #b26a00;
+}
+.ump-action-btn.activate {
+  background: #e8f5e9;
+  color: var(--ump-success);
+  border: 1px solid #81c784;
+}
+.ump-action-btn.activate:hover {
+  background: #81c784;
+  color: #fff;
+}
+.ump-action-btn.delete {
+  background: #ffebee;
+  color: var(--ump-danger);
+  border: 1px solid #ff8a80;
+}
+.ump-action-btn.delete:hover {
+  background: #ff8a80;
+  color: #fff;
+}
+
+.ump-action-icon {
+  width: 13px;
+  height: 13px;
+  min-width: 13px;
+  min-height: 13px;
+  max-width: 13px;
+  max-height: 13px;
+  padding: 0;
+  font-size: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+/* Floating Action Buttons (FAB) for Back and Add User */
+.ump-fab-container {
+  position: absolute;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.ump-fab-container-left {
+  left: 16px;
+}
+.ump-fab-container-right {
+  right: 16px;
+}
+.ump-fab {
+  background: var(--ump-primary-light);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(26, 78, 138, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  transition: background 0.18s, box-shadow 0.18s;
+  outline: none;
+}
+.ump-fab:hover,
+.ump-fab:focus {
+  background: var(--ump-primary);
+  box-shadow: 0 4px 16px rgba(26, 78, 138, 0.18);
+}
+.ump-fab-label {
+  color: var(--ump-primary-light);
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 0;
+  text-align: center;
+  user-select: none;
+}
+
+/* Modal Overlay */
+.ump-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(107, 192, 245, 0.18);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.ump-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  padding: 32px 28px 24px 28px;
+  min-width: 320px;
+  max-width: 380px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1.5px solid #e3f0ff;
+}
+
+/* Modal Header */
+.ump-modal-title {
+  background: linear-gradient(90deg, #3a8dde 0%, #174ea6 100%);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 14px 14px 0 0;
+  padding: 16px 0 12px 0;
+  text-align: center;
+  margin: -32px -28px 24px -28px;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Close Button */
+
+.ump-modal-close-btn:hover {
+  color: #ff8a80;
+}
+
+/* Form Group */
+.ump-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+/* Form Label */
+.ump-form-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #174ea6;
+}
+
+/* Input and Select */
+.ump-form-input,
+.ump-form-select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #c7d7ef;
+  margin-top: 2px;
+  box-sizing: border-box;
+  font-size: 15px;
+  background: #f7faff;
+  transition: border 0.2s;
+}
+.ump-form-input:focus,
+.ump-form-select:focus {
+  border: 1.5px solid #3a8dde;
+  outline: none;
+}
+
+/* Checkbox */
+.ump-form-checkbox {
+  margin-left: 8px;
+  accent-color: #3a8dde;
+  width: 18px;
+  height: 18px;
+}
+
+/* Save Button */
+.ump-form-submit-btn {
+  background: linear-gradient(90deg, #3a8dde 0%, #174ea6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 0;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 18px;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(26, 78, 138, 0.1);
+  letter-spacing: 0.5px;
+}
+.ump-form-submit-btn:hover {
+  background: linear-gradient(90deg, #174ea6 0%, #3a8dde 100%);
+}
+
+/* Error Message */
+.ump-error-message {
+  color: #d32f2f;
+  margin: 8px 0;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Bulk Actions */
+.ump-bulk-actions {
+  position: fixed;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  gap: 12px;
+}
+.ump-bulk-action-btn {
+  background: var(--ump-warning);
+  color: #b26a00;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(26, 78, 138, 0.08);
+}
+.ump-bulk-action-btn:last-child {
+  background: var(--ump-danger);
+  color: #fff;
+}
+.ump-bulk-action-btn:hover {
+  background: #ffe082;
+  color: #b26a00;
+}
+.ump-bulk-action-btn:last-child:hover {
+  background: #ff8a80;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .ump-container {
+    padding: 8px 2px 8px 2px;
+    max-width: 99vw;
+  }
+  .ump-title {
+    font-size: 16px;
+  }
+  .ump-table th,
+  .ump-table td {
+    padding: 4px 3px;
+    font-size: 11px;
+  }
+  .ump-filters {
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+  }
+  .ump-modal-content {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 10px 4px 10px 4px;
+  }
+}

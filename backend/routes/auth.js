@@ -114,6 +114,36 @@ module.exports = (db) => {
         // Optionally: generate/send OTP here
         return res.json({ mfaRequired: true, userId: user.id });
       }
+      // Mark attendance as Present for today
+      const today = new Date().toISOString().slice(0, 10);
+      const now = new Date();
+      const timeIn = now.toTimeString().slice(0, 8); // HH:MM:SS
+
+      // Check assigned shift for today
+      let attendanceType = "Normal";
+      const [userShiftRows] = await db.query(
+        `SELECT s.start_time, s.end_time FROM user_shifts us JOIN shifts s ON us.shift_id = s.id WHERE us.user_id = ? AND us.date = ?`,
+        [user.id, today]
+      );
+      if (userShiftRows.length > 0) {
+        const { start_time, end_time } = userShiftRows[0];
+        // Handle overnight shifts (end_time < start_time)
+        let isNormal = false;
+        if (end_time > start_time) {
+          isNormal = timeIn >= start_time && timeIn <= end_time;
+        } else {
+          // Overnight shift (e.g., 21:00 to 05:00)
+          isNormal = timeIn >= start_time || timeIn <= end_time;
+        }
+        attendanceType = isNormal ? "Normal" : "Overtime";
+      }
+
+      await db.query(
+        `INSERT INTO attendance (user_id, date, status, time_in, attendance_type)
+         VALUES (?, ?, 'Present', ?, ?)
+         ON DUPLICATE KEY UPDATE status = 'Present', time_in = IFNULL(time_in, VALUES(time_in)), attendance_type = VALUES(attendance_type)`,
+        [user.id, today, timeIn, attendanceType]
+      );
       // Issue JWT
       const token = jwt.sign(
         { userId: user.id, role: user.role },
